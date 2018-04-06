@@ -21,6 +21,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../dist'),
     filename: 'client.js',
+    publicPath: '/dist/',
   },
   optimization: {
     splitChunks: {
@@ -61,17 +62,17 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.join(__dirname, 'app'),
-      path.join(__dirname, 'app/css'),
+      path.join(__dirname, '../app'),
+      // path.join(__dirname, 'app/css'),
       'node_modules',
     ],
     alias: {
       // external libraries
-      jquerynotify: path.join(__dirname, 'app/js/jquery.notify.min'),
-      clipboard: path.join(__dirname, 'app/js/clipboard.min'),
+      jquerynotify: path.join(__dirname, '../app/js/jquery.notify.min'),
+      clipboard: path.join(__dirname, '../app/js/clipboard.min'),
 
       // directory alias to shorten template paths
-      templates: path.join(__dirname, 'app/templates'),
+      templates: path.join(__dirname, '../app/templates'),
     },
     extensions: ['.js', '.jsx'],
   },

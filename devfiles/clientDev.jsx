@@ -1,10 +1,10 @@
 import { AppContainer } from 'react-hot-loader';
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 
 import ClientDevRoutes from './clientDevRoutes';
 
-render(
+hydrate(
   <AppContainer>
     <ClientDevRoutes />
   </AppContainer>,
@@ -15,7 +15,7 @@ render(
 if (module.hot) {
   module.hot.accept('./clientDevRoutes', () => {
     const NextApp = require('./clientDevRoutes').default; // eslint-disable-line global-require
-    render(
+    hydrate(
       <AppContainer>
         <NextApp />
       </AppContainer>,
